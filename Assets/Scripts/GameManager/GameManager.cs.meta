@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5f4a2496fafd04248ab6b13470b9f172
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TimerText: {instanceID: 0}
+  - coinText: {instanceID: 0}
+  - merman: {fileID: 1812636641231012177, guid: d3b70b879cfb8fa48b24e6e2b6e2cfce, type: 3}
+  - zombie: {fileID: 223847251359520512, guid: 456578e0cdb3d204dbc721fb176de0e8, type: 3}
+  - rusher: {fileID: 260139837199899402, guid: fbf57da8357c59840a4160c1d8e94898, type: 3}
+  - player: {fileID: 4957166920793815842, guid: 279d3811fa578f049bdfcf99c9ea8e28, type: 3}
+  - boss: {fileID: 3734195842181384585, guid: facb23aba6726044bb912543ce60730e, type: 3}
+  - Player: {instanceID: 0}
+  - crystalSource: {instanceID: 0}
+  - levelSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
