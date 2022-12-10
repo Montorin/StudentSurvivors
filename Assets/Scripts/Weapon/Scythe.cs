@@ -32,6 +32,6 @@ public class Scythe : MonoBehaviour
     IEnumerator ScytheDestroy()
     {
         yield return new WaitForSeconds(2 + Duration.duration);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

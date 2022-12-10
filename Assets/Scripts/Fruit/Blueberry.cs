@@ -15,7 +15,7 @@ public class Blueberry : MonoBehaviour
             {
                 player.HP = 4;
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

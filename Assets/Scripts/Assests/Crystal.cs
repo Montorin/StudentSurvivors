@@ -29,7 +29,7 @@ public class Crystal : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
@@ -38,7 +38,7 @@ public class Crystal : MonoBehaviour
         spriteRenderer.enabled = false;
         yield return new WaitForSeconds(3f);
         isMagnetTrue = false;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     void CrystalGoToPlayer()
     {

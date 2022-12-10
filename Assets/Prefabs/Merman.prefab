@@ -92,6 +92,10 @@ PrefabInstance:
       value: Merman
       objectReference: {fileID: 0}
     - target: {fileID: 8002828725478444154, guid: 329dc95c09b3e7045a274c8621a96acc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002828725478444154, guid: 329dc95c09b3e7045a274c8621a96acc, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}

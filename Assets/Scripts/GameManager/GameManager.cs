@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -425,7 +427,9 @@ public class GameManager : MonoBehaviour
             }
 
             spawnPosition += player.transform.position;
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            enemyPrefab.transform.position = spawnPosition;
+            enemyPrefab.transform.rotation = Quaternion.identity;
+            enemyPrefab.SetActive(true);
         }
     }
     public void OnRestartButtonClick()
