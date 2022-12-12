@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    private SimpleObjectPool coinpool;
+
+    private void Start()
+    {
+        coinpool = transform.parent.GetComponent<SimpleObjectPool>();
+    }
     internal void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
@@ -11,7 +17,7 @@ public class Coin : MonoBehaviour
         {
             TitleManager.saveData.CoinRun++;
             TitleManager.saveData.goldCoins++;
-            gameObject.SetActive(false);
+            coinpool.ReturnObject(gameObject);
         }
     }
 }

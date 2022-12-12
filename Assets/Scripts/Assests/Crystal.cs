@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour
 {
+    private SimpleObjectPool pool;
     [SerializeField] SpriteRenderer spriteRenderer;
     GameObject player;
     public static bool isMagnetTrue = false;
     void Start()
     {
+        pool = transform.parent.GetComponent<SimpleObjectPool>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -27,10 +29,7 @@ public class Crystal : MonoBehaviour
             {
                 StartCoroutine(MagnetDestroy());
             }
-            else
-            {
-                gameObject.SetActive(false);
-            }
+                pool.ReturnObject(gameObject);
         }
     }
     IEnumerator MagnetDestroy()
@@ -38,7 +37,7 @@ public class Crystal : MonoBehaviour
         spriteRenderer.enabled = false;
         yield return new WaitForSeconds(3f);
         isMagnetTrue = false;
-        gameObject.SetActive(false);
+        pool.ReturnObject(gameObject);
     }
     void CrystalGoToPlayer()
     {
