@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8002828725478444154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.247, y: 1.345, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,12 +120,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927c5adc829d3b144a5ddb75fcb0bfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  applepool: {fileID: 4672391921589016979, guid: e6d153342919eba459750390d8004354, type: 3}
+  blueberrypool: {fileID: 1672571248577863405, guid: d5371c7c42f7d3b479af7db12898c83e, type: 3}
+  coinpool: {fileID: 1538642997512939591, guid: 7300b9734dbdf6d4d910272d5f2515fc, type: 3}
+  magnetpool: {fileID: 3707339708641105588, guid: 9a4504a8a4707f5439c86845e962e6ab, type: 3}
+  crystalpool: {fileID: 6609736338996237504, guid: 7d389424333817f429805c13c6d447b9, type: 3}
   crystalPrefab: {fileID: 7582701420318930249, guid: 7995feaff4633404fb31be196469294c, type: 3}
   apple: {fileID: 8411141828122653769, guid: a040bd02a40e29341bb0479db6e68fce, type: 3}
   blueberry: {fileID: 8489551799741762184, guid: 1d8b879a80963cd4ebc0cd363e7743c0, type: 3}
   coin: {fileID: 2853121287426859028, guid: dbbfb9b6b8203ea43b18fe88b78237a0, type: 3}
   enemy: {fileID: 8002828725478444154}
   magnet: {fileID: 2316918460716938580, guid: 7980f90f4ce4d3645b7653f6c9ae4157, type: 3}
+  hp: 0
   speed: 2
   isTrackingPlayer: 1
   enemyHP: 3
