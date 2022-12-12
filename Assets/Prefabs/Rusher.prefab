@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rusher
       objectReference: {fileID: 0}
+    - target: {fileID: 223847251359520512, guid: 456578e0cdb3d204dbc721fb176de0e8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1812409245169441845, guid: 456578e0cdb3d204dbc721fb176de0e8, type: 3}
       propertyPath: m_Enabled
       value: 0
