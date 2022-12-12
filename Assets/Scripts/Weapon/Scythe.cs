@@ -7,8 +7,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Scythe : MonoBehaviour
 {
+    private SimpleObjectPool pool;
     void Start()
     {
+        pool = transform.parent.GetComponent<SimpleObjectPool>();
         StartCoroutine(ScytheDestroy());
     }
     void RotateByDegrees()
@@ -32,6 +34,6 @@ public class Scythe : MonoBehaviour
     IEnumerator ScytheDestroy()
     {
         yield return new WaitForSeconds(2 + Duration.duration);
-        gameObject.SetActive(false);
+        pool.ReturnObject(gameObject);
     }
 }

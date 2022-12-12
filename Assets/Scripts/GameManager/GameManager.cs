@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] TMP_Text TimerText;
     [SerializeField] TMP_Text coinText;
-    [SerializeField] GameObject merman;
-    [SerializeField] GameObject zombie;
-    [SerializeField] GameObject rusher;
+    [SerializeField] private SimpleObjectPool merman;
+    [SerializeField] private SimpleObjectPool zombie;
+    [SerializeField] private SimpleObjectPool rusher;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject boss;
+    [SerializeField] private SimpleObjectPool boss;
     [SerializeField] Player Player;
     [SerializeField] AudioSource crystalSource;
     [SerializeField] AudioSource levelSource;
@@ -30,15 +30,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawmEnemyCoroutine());
-        if (!SaveData.postprocess)
-        {
-            SaveData.postprocess = true;
-        }
-        if (SaveData.postprocess == false)
-        {
-
-        }
-        else { /* Do Nothing it is on by default lol */}
     }
     private void Update()
     {
@@ -408,7 +399,7 @@ public class GameManager : MonoBehaviour
             spawnCounter++;
         }
     }
-    void SpawnEnemies(GameObject enemyPrefab, int numberOfEnemies, bool isTracking = true)
+    void SpawnEnemies(SimpleObjectPool enemyPrefab, int numberOfEnemies, bool isTracking = true)
     {
         if (player == null)
         {
@@ -425,11 +416,12 @@ public class GameManager : MonoBehaviour
             {
                 spawnPosition = new Vector3(diceX, diceY, 0);
             }
-
+            
             spawnPosition += player.transform.position;
-            enemyPrefab.transform.position = spawnPosition;
-            enemyPrefab.transform.rotation = Quaternion.identity;
-            enemyPrefab.SetActive(true);
+            GameObject g = enemyPrefab.GetObject();
+            g.transform.position = spawnPosition;
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
         }
     }
     public void OnRestartButtonClick()

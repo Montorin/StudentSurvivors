@@ -5,25 +5,48 @@ using UnityEngine.Pool;
 
 public class SimpleObjectPool : MonoBehaviour
 {
-    [SerializeField] GameObject objectPrefab;
+    [SerializeField] private GameObject objectPrefab;
+    [SerializeField] private int poolSize;
+    [SerializeField] private bool expandable;
 
-    List<GameObject> poolObjects = new List<GameObject>();
-
-    int objectIndex;
+    List<GameObject> freeList;
+    List<GameObject> usedList;
     private void Awake()
     {
-        for (int i = 0; i < 500; i++)
+        freeList = new List<GameObject>();
+        usedList = new List<GameObject>();
+
+        for (int i = 0; i < poolSize; i++)
         {
-            poolObjects.Add(Instantiate(objectPrefab));
+            GenerateNewObject();
         }
     }
-    public GameObject Get()
+    public GameObject GetObject()
     {
-        if (objectIndex >= poolObjects.Count)
+        int totalFree = freeList.Count;
+        if (totalFree == 0 && !expandable)
+        { return null; }
+        else if (totalFree == 0)
         {
-            objectIndex = 0;
+            GenerateNewObject();
         }
-        objectIndex %= poolObjects.Count;
-        return poolObjects[objectIndex++];
+        GameObject g = freeList[totalFree - 1];
+        freeList.RemoveAt(totalFree);
+        usedList.Add(g);
+        return g;
+    }
+    public void ReturnObject(GameObject obj)
+    {
+        Debug.Assert(usedList.Contains(obj));
+        obj.SetActive(false);
+        usedList.Remove(obj);
+        freeList.Add(obj);
+    }
+    private void GenerateNewObject()
+    {
+        GameObject g = Instantiate(objectPrefab);
+        g.transform.parent = transform;
+        g.SetActive(false);
+        freeList.Add(g);
     }
 }
