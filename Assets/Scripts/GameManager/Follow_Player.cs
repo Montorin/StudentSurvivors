@@ -13,11 +13,7 @@ public class Follow_Player : MonoBehaviour
 
     //public Transform player;
     // Update is called once per frame
-    private void Awake()
-    {
-        if(!SaveData.postprocess)
-        { SaveData.postprocess = true; }
-    }
+
     private void Start()
     {
         if (SaveData.postprocess == false)

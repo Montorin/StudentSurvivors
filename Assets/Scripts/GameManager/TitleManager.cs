@@ -22,6 +22,7 @@ public class TitleManager : MonoBehaviour
     string SavePath => Path.Combine(Application.persistentDataPath, "save.bin");
     private void Awake()
     {
+        SaveData.postprocess = true;
         if (saveData == null)
             Load();
         else
@@ -148,15 +149,15 @@ public class TitleManager : MonoBehaviour
     }
     public void OnMap2ButtonClick()
     {
-        //if (SaveData.unlockCastle == true)
-        //{
-        saveData.sceneNumber = 1;
-        SceneManager.LoadScene("game 1");
-        //}
-        //else
-        //{
-        //    //Do Nothing
-        //}
+        if (SaveData.unlockCastle == true)
+        {
+            saveData.sceneNumber = 1;
+            SceneManager.LoadScene("game 1");
+        }
+        else
+        {
+            //Do Nothing
+        }
     }
     public void OnMapChoiceExitButtonClick()
     { MapChoice.SetActive(false); }

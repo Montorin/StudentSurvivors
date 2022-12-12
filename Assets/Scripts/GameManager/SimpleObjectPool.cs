@@ -24,14 +24,14 @@ public class SimpleObjectPool : MonoBehaviour
     public GameObject GetObject()
     {
         int totalFree = freeList.Count;
-        if (totalFree == 0 && !expandable)
+        if (freeList.Count == 0 && !expandable)
         { return null; }
         else if (totalFree == 0)
         {
             GenerateNewObject();
         }
         GameObject g = freeList[totalFree - 1];
-        freeList.RemoveAt(totalFree);
+        freeList.RemoveAt(totalFree - 1);
         usedList.Add(g);
         return g;
     }
