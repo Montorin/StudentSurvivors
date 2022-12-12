@@ -8,6 +8,13 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
+    private SimpleObjectPool enemypool;
+    [SerializeField] private SimpleObjectPool applepool;
+    [SerializeField] private SimpleObjectPool blueberrypool;
+    [SerializeField] private SimpleObjectPool coinpool;
+    [SerializeField] private SimpleObjectPool magnetpool;
+    [SerializeField] private SimpleObjectPool crystalpool;
+    //
     public static GameManager gamemanager;
     //
     [SerializeField] GameObject crystalPrefab;
@@ -31,6 +38,7 @@ public class Enemy : MonoBehaviour
     //
     private void Start()
     {
+        enemypool = transform.parent.GetComponent<SimpleObjectPool>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
@@ -70,41 +78,46 @@ public class Enemy : MonoBehaviour
             if (randomRange < 8)
             {
                 Vector3 applePosition = new Vector3(enemyX, enemyY + (float)0.1, enemyZ);
-                apple.transform.position = transform.position;
-                apple.transform.rotation = Quaternion.Euler(0, 0, 0);
-                apple.SetActive(true);
+                GameObject t = applepool.GetObject();
+                t.transform.position = transform.position;
+                t.transform.rotation = Quaternion.Euler(0, 0, 0);
+                t.SetActive(true);
             }
             // Heal (50% chance-3%)
-            else if (randomRange > 96)
+            if (randomRange > 96)
             {
                 Vector3 berryPostion = new Vector3(enemyX, enemyY + (float)0.1, enemyZ);
-                blueberry.transform.position = transform.position;
-                blueberry.transform.rotation = Quaternion.Euler(0, 0, 0);
-                blueberry.SetActive(true);
+                GameObject f = blueberrypool.GetObject();
+                f.transform.position = transform.position;
+                f.transform.rotation = Quaternion.Euler(0, 0, 0);
+                f.SetActive(true);
             }
             // Coin (chance-5%)
             int randomRanger = Random.Range(0, 101);
             if (randomRanger < 5)
             {
                 Vector3 coinPosition = new Vector3(enemyX + (float)0.2, enemyY + (float)0.2, enemyZ);
-                coin.transform.position = transform.position;
-                coin.transform.rotation = Quaternion.identity;
-                coin.SetActive(true);
+                GameObject h = coinpool.GetObject();
+                h.transform.position = transform.position;
+                h.transform.rotation = Quaternion.identity;
+                h.SetActive(true);
             }
             // Magnet (chance-1%)
             int randomRanger2 = Random.Range(0, 101);
             if (randomRanger2 < 1)
             {
                 Vector3 magnetPosition = new Vector3(enemyX + (float)-0.2, enemyY + (float)-0.2, enemyZ);
-                magnet.transform.position = transform.position;
-                magnet.transform.rotation = Quaternion.identity;
-                magnet.SetActive(true);
+                GameObject r = magnetpool.GetObject();
+                r.transform.position = transform.position;
+                r.transform.rotation = Quaternion.identity;
+                r.SetActive(true);
             }
             // EXP
             Vector3 enemyPosition = new Vector3(enemyX + (float)0.2, enemyY + (float)0.2, enemyZ);
-            crystalPrefab.transform.position = transform.position;
-            crystalPrefab.transform.rotation = Quaternion.identity;
-            crystalPrefab.SetActive(true);
+            GameObject g =crystalpool.GetObject();
+            g.transform.position = transform.position;
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
             if (gameObject.name.Contains("Boss"))
             {
                 TitleManager.saveData.Bossdead++;
@@ -113,7 +126,7 @@ public class Enemy : MonoBehaviour
             {
                 TitleManager.saveData.mermandead++;
             }
-            gameObject.SetActive(false);
+            enemypool.ReturnObject(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -123,7 +136,7 @@ public class Enemy : MonoBehaviour
         {
             if (player.OnDamage())
             {
-                gameObject.SetActive(false);
+                enemypool.ReturnObject(gameObject);
             }
         }
     }
