@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] RuntimeAnimatorController player2;
     //
     public int HP;
-    public int MaxHP = 4;
+    public int MaxHP = 9;
     //
     internal int currentExp;
     internal int expToLevel = 5;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = player2;
             weapon[13].LevelUp();
-            MaxHP = 3 + TitleManager.saveData.HP_Up;
+            MaxHP = 5 + TitleManager.saveData.HP_Up;
             speed = 5 + TitleManager.saveData.Speed_Up;
         }
         HP = MaxHP;

@@ -15,7 +15,7 @@ public class Katana : BaseWeapon
     {
         while (true)
         {
-            transform.localScale = Vector3.one * (level*0.5f+0.5f);
+            transform.localScale = Vector3.one * (level*0.5f+1.5f);
 
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;

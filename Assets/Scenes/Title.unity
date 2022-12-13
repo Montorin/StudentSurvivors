@@ -1993,7 +1993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &625598604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,7 +3216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hp: 3
+  m_text: 'Hp: 5
 
     Speed: 5'
   m_isRightToLeft: 0
@@ -5596,7 +5596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hp: 4
+  m_text: 'Hp: 9
 
     Speed: 4'
   m_isRightToLeft: 0
