@@ -1,52 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class SimpleObjectPool : MonoBehaviour
 {
-    [SerializeField] private GameObject objectPrefab;
-    [SerializeField] private int poolSize;
-    [SerializeField] private bool expandable;
+    [SerializeField] GameObject objectPrefab;
+    [SerializeField] int poolSisze;
+    [SerializeField] bool expandable;
 
-    List<GameObject> freeList;
-    List<GameObject> usedList;
+    List<GameObject> usedObjects = new List<GameObject>();
+    List<GameObject> freeObjects = new List<GameObject>();
+
     private void Awake()
     {
-        freeList = new List<GameObject>();
-        usedList = new List<GameObject>();
-
-        for (int i = 0; i < poolSize; i++)
+        for (int i = 0; i < poolSisze; i++)
         {
-            GenerateNewObject();
+            GenerateNewObjects();
         }
     }
+
     public GameObject GetObject()
     {
-        int totalFree = freeList.Count;
-        if (freeList.Count == 0 && !expandable)
-        { return null; }
+        int totalFree = freeObjects.Count;
+        if (totalFree == 0 && !expandable) return null;
         else if (totalFree == 0)
         {
-            GenerateNewObject();
+            GenerateNewObjects();
         }
-        GameObject g = freeList[totalFree - 1];
-        freeList.RemoveAt(totalFree - 1);
-        usedList.Add(g);
-        return g;
+
+        GameObject obj = freeObjects[totalFree - 1];
+        freeObjects.RemoveAt(totalFree - 1);
+        usedObjects.Add(obj);
+        return obj;
     }
+
     public void ReturnObject(GameObject obj)
     {
-        Debug.Assert(usedList.Contains(obj));
         obj.SetActive(false);
-        usedList.Remove(obj);
-        freeList.Add(obj);
+        usedObjects.Remove(obj);
+        freeObjects.Add(obj);
     }
-    private void GenerateNewObject()
+
+    private void GenerateNewObjects()
     {
-        GameObject g = Instantiate(objectPrefab);
-        g.transform.parent = transform;
-        g.SetActive(false);
-        freeList.Add(g);
+        GameObject obj = Instantiate(objectPrefab);
+        obj.transform.parent = transform;
+        obj.SetActive(false);
+        freeObjects.Add(obj);
     }
 }

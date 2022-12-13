@@ -7,10 +7,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Scythe : MonoBehaviour
 {
-    private SimpleObjectPool pool;
+    [SerializeField] SimpleObjectPool pool;
     void Start()
     {
-        pool = transform.parent.GetComponent<SimpleObjectPool>();
         StartCoroutine(ScytheDestroy());
     }
     void RotateByDegrees()

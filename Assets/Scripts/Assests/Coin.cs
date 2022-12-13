@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    private SimpleObjectPool coinpool;
-
-    private void Start()
-    {
-        coinpool = transform.parent.GetComponent<SimpleObjectPool>();
-    }
+    [SerializeField] SimpleObjectPool coinpool;
     internal void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();

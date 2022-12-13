@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    private SimpleObjectPool pool;
-    private void Start()
-    {
-        pool = transform.parent.GetComponent<SimpleObjectPool>();
-    }
+    [SerializeField]  SimpleObjectPool pool;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();

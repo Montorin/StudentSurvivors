@@ -78,39 +78,39 @@ public class Enemy : MonoBehaviour
             if (randomRange < 8)
             {
                 Vector3 applePosition = new Vector3(enemyX, enemyY + (float)0.1, enemyZ);
-                GameObject t = applepool.GetObject();
-                t.transform.position = transform.position;
-                t.transform.rotation = Quaternion.Euler(0, 0, 0);
-                t.SetActive(true);
+                GameObject i = applepool.GetObject();
+                i.transform.position = transform.position;
+                i.transform.rotation = Quaternion.Euler(0, 0, 0);
+                i.SetActive(true);
             }
             // Heal (50% chance-3%)
             if (randomRange > 96)
             {
                 Vector3 berryPostion = new Vector3(enemyX, enemyY + (float)0.1, enemyZ);
-                GameObject f = blueberrypool.GetObject();
-                f.transform.position = transform.position;
-                f.transform.rotation = Quaternion.Euler(0, 0, 0);
-                f.SetActive(true);
+                GameObject h = blueberrypool.GetObject();
+                h.transform.position = transform.position;
+                h.transform.rotation = Quaternion.Euler(0, 0, 0);
+                h.SetActive(true);
             }
             // Coin (chance-5%)
             int randomRanger = Random.Range(0, 101);
             if (randomRanger < 5)
             {
                 Vector3 coinPosition = new Vector3(enemyX + (float)0.2, enemyY + (float)0.2, enemyZ);
-                GameObject h = coinpool.GetObject();
-                h.transform.position = transform.position;
-                h.transform.rotation = Quaternion.identity;
-                h.SetActive(true);
+                GameObject t = coinpool.GetObject();
+                t.transform.position = transform.position;
+                t.transform.rotation = Quaternion.identity;
+                t.SetActive(true);
             }
             // Magnet (chance-1%)
             int randomRanger2 = Random.Range(0, 101);
             if (randomRanger2 < 1)
             {
                 Vector3 magnetPosition = new Vector3(enemyX + (float)-0.2, enemyY + (float)-0.2, enemyZ);
-                GameObject r = magnetpool.GetObject();
-                r.transform.position = transform.position;
-                r.transform.rotation = Quaternion.identity;
-                r.SetActive(true);
+                GameObject d = magnetpool.GetObject();
+                d.transform.position = transform.position;
+                d.transform.rotation = Quaternion.identity;
+                d.SetActive(true);
             }
             // EXP
             Vector3 enemyPosition = new Vector3(enemyX + (float)0.2, enemyY + (float)0.2, enemyZ);

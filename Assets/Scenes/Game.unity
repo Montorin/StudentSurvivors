@@ -4370,6 +4370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4672391921589016979, guid: e6d153342919eba459750390d8004354, type: 3}
+      propertyPath: poolSisze
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d153342919eba459750390d8004354, type: 3}
 --- !u!1001 &701320401
@@ -4382,6 +4386,10 @@ PrefabInstance:
     - target: {fileID: 1538642997512939590, guid: 7300b9734dbdf6d4d910272d5f2515fc, type: 3}
       propertyPath: m_Name
       value: CoinObjectPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538642997512939591, guid: 7300b9734dbdf6d4d910272d5f2515fc, type: 3}
+      propertyPath: poolSisze
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1538642997512939640, guid: 7300b9734dbdf6d4d910272d5f2515fc, type: 3}
       propertyPath: m_RootOrder
@@ -4605,6 +4613,10 @@ PrefabInstance:
     - target: {fileID: 1516639592152056506, guid: 6b6d35a0789a38f4989e7d30bb49ef29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516639592152056507, guid: 6b6d35a0789a38f4989e7d30bb49ef29, type: 3}
+      propertyPath: poolSisze
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b6d35a0789a38f4989e7d30bb49ef29, type: 3}
@@ -5470,6 +5482,10 @@ PrefabInstance:
     - target: {fileID: 1672571248577863404, guid: d5371c7c42f7d3b479af7db12898c83e, type: 3}
       propertyPath: m_Name
       value: BlueberryObjectPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571248577863405, guid: d5371c7c42f7d3b479af7db12898c83e, type: 3}
+      propertyPath: poolSisze
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5371c7c42f7d3b479af7db12898c83e, type: 3}
@@ -9535,6 +9551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagnetObjectPool
       objectReference: {fileID: 0}
+    - target: {fileID: 3707339708641105588, guid: 9a4504a8a4707f5439c86845e962e6ab, type: 3}
+      propertyPath: poolSisze
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3707339708641105589, guid: 9a4504a8a4707f5439c86845e962e6ab, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -10060,6 +10080,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4589111664844477748, guid: 3efb627c8f0e6684eaa70dbd343e3233, type: 3}
+      propertyPath: poolSisze
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4589111664844477749, guid: 3efb627c8f0e6684eaa70dbd343e3233, type: 3}
       propertyPath: m_Name
       value: BossObjectPool
@@ -10175,6 +10199,14 @@ PrefabInstance:
     - target: {fileID: 1326539348197786814, guid: 35f5f9c8d64101c4ea732baa137b35a6, type: 3}
       propertyPath: m_Name
       value: RusherObjectPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326539348197786815, guid: 35f5f9c8d64101c4ea732baa137b35a6, type: 3}
+      propertyPath: poolSisze
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326539348197786815, guid: 35f5f9c8d64101c4ea732baa137b35a6, type: 3}
+      propertyPath: expandable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f5f9c8d64101c4ea732baa137b35a6, type: 3}
@@ -10379,6 +10411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3452985273878495780, guid: 2f3037dafcce59844b17389b03668f3d, type: 3}
+      propertyPath: poolSisze
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3452985273878495780, guid: 2f3037dafcce59844b17389b03668f3d, type: 3}
       propertyPath: expandable
       value: 1
@@ -11284,6 +11320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6622644533811430962, guid: 91cd614c9f8868a478fa30f76d16d035, type: 3}
+      propertyPath: poolSisze
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6622644533811430962, guid: 91cd614c9f8868a478fa30f76d16d035, type: 3}
       propertyPath: expandable
       value: 1
@@ -12611,6 +12651,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6609736338996237504, guid: 7d389424333817f429805c13c6d447b9, type: 3}
+      propertyPath: poolSisze
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6609736338996237505, guid: 7d389424333817f429805c13c6d447b9, type: 3}
       propertyPath: m_RootOrder
       value: 11

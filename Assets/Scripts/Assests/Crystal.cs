@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour
 {
-    private SimpleObjectPool pool;
+    [SerializeField] SimpleObjectPool pool;
     [SerializeField] SpriteRenderer spriteRenderer;
     GameObject player;
     public static bool isMagnetTrue = false;
     void Start()
     {
-        pool = transform.parent.GetComponent<SimpleObjectPool>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()

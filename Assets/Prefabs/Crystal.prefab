@@ -114,4 +114,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425a9d2859302774899baf30a018db4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pool: {fileID: 6609736338996237504, guid: 7d389424333817f429805c13c6d447b9, type: 3}
   spriteRenderer: {fileID: 7582701420318930245}

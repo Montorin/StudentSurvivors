@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         {
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = player2;
-            weapon[1].LevelUp();
+            weapon[13].LevelUp();
             MaxHP = 3 + TitleManager.saveData.HP_Up;
             speed = 5 + TitleManager.saveData.Speed_Up;
         }

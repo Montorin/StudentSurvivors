@@ -421,6 +421,7 @@ public class GameManager : MonoBehaviour
             GameObject g = enemyPrefab.GetObject();
             g.transform.position = spawnPosition;
             g.transform.rotation = Quaternion.identity;
+            g.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
             g.SetActive(true);
         }
     }
